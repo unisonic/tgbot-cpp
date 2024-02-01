@@ -4,6 +4,7 @@
 #include "tgbot/export.h"
 
 #include <string>
+#include <filesystem>
 
 /**
  * @ingroup tools
@@ -19,6 +20,9 @@ namespace FileTools {
 TGBOT_API
 std::string read(const std::string& filePath);
 
+TGBOT_API
+std::string read(const std::filesystem::path::value_type* filePath);
+
 /**
  * Save file to disk.
  * @param filePath Path to a file
@@ -26,6 +30,9 @@ std::string read(const std::string& filePath);
 */
 TGBOT_API
 void write(const std::string& content, const std::string& filePath);
+
+TGBOT_API
+void write(const std::string& content, const std::filesystem::path::value_type* filePath);
 
 }
 
